@@ -15,13 +15,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'AURELIA | Haute Joaillerie & Fine Jewelry',
+      title: 'AURELIA | Haute Joaillerie & Fine Jewelry · Nairobi, Kenya',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Artisanal fine jewelry crafted with recycled 18k solid gold, conflict-free diamonds, and rare gemstones. Certified sustainability and timeless craftsmanship.',
+          content: 'Handcrafted fine jewelry created in Nairobi, Kenya. Recycled 18k solid gold, Kenyan Tsavorite, and conflict-free ethical diamonds. Complimentary delivery across Kenya.',
         },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'theme-color', content: '#18181b' },

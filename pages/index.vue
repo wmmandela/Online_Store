@@ -17,14 +17,14 @@
       <!-- Hero Copy -->
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         <span class="inline-block text-gold-400 text-xs sm:text-sm uppercase tracking-[0.35em] font-medium mb-4 animate-fade-in">
-          High Jewelry Atelier · Paris & New York
+          Haute Joaillerie Atelier · Nairobi, Kenya
         </span>
         <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-white mb-6 leading-[1.1] animate-slide-up">
-          Modern Heirlooms <br class="hidden sm:inline" />
+          Modern African Heirlooms <br class="hidden sm:inline" />
           <span class="italic font-light">Forged in Light</span>
         </h1>
         <p class="text-sm sm:text-base text-zinc-300 max-w-xl mx-auto mb-10 leading-relaxed font-light">
-          Sculptural fine jewelry handcrafted from 100% recycled 18k solid gold, conflict-free diamonds, and rare gemstones. Made to outlive generations.
+          Sculptural fine jewelry handcrafted in Nairobi from responsibly sourced Kenyan gold, ethical diamonds, and rare East African gemstones (Tsavorite, Tanzanite, Ceylon Sapphire). Made to outlive generations.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -32,7 +32,7 @@
             to="/products"
             class="w-full sm:w-auto px-8 py-3.5 bg-gold-500 text-zinc-950 text-xs uppercase tracking-widest font-semibold hover:bg-gold-400 transition-all shadow-glow"
           >
-            Explore Collections
+            Explore Kenyan Creations
           </NuxtLink>
           <NuxtLink
             to="/products?category=rings"
@@ -50,19 +50,19 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div class="flex items-center justify-center gap-3">
             <span class="text-gold-600 font-serif text-lg">✦</span>
-            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">100% Recycled 18K Gold</span>
+            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">100% Recycled Kenyan Gold</span>
           </div>
           <div class="flex items-center justify-center gap-3">
             <span class="text-gold-600 font-serif text-lg">✦</span>
-            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">Certified Ethical Diamonds</span>
+            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">East African Gemstones</span>
           </div>
           <div class="flex items-center justify-center gap-3">
             <span class="text-gold-600 font-serif text-lg">✦</span>
-            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">Free Worldwide Express Delivery</span>
+            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">Free Delivery Across 47 Counties</span>
           </div>
           <div class="flex items-center justify-center gap-3">
             <span class="text-gold-600 font-serif text-lg">✦</span>
-            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">Lifetime Care & Resizing</span>
+            <span class="text-xs uppercase tracking-wider text-zinc-700 font-medium">Nairobi Atelier Care & Warranty</span>
           </div>
         </div>
       </div>
@@ -161,8 +161,8 @@
                 class="rounded-sm shadow-subtle object-cover aspect-[4/3] w-full"
               />
               <img
-                src="https://images.unsplash.com/photo-1611591475155-4264754f931b?auto=format&fit=crop&w=800&q=80"
-                alt="Platinum tennis bracelet"
+                src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80"
+                alt="Solid gold cuff bracelet"
                 loading="lazy"
                 class="rounded-sm shadow-subtle object-cover aspect-[4/5] w-full"
               />

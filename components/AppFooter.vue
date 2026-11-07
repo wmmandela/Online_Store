@@ -54,10 +54,10 @@
             </span>
           </NuxtLink>
           <p class="text-xs text-zinc-400 max-w-sm leading-relaxed">
-            Crafting architectural heirlooms for the modern collector. Every creation is handmade in limited editions with recycled 18k solid gold, laboratory diamonds, and responsibly mined natural gemstones.
+            Crafting architectural fine jewelry in Nairobi, Kenya. Every creation is handmade in limited editions with recycled Kenyan 18k solid gold, ethical diamonds, and responsibly mined East African gemstones (Tsavorite, Tanzanite, Sapphire).
           </p>
           <div class="text-xs text-gold-400 font-mono tracking-wider pt-2">
-            PARIS · NEW YORK · MILAN · TOKYO
+            NAIROBI (WESTLANDS & KAREN) · MOMBASA · KISUMU
           </div>
         </div>
 
@@ -108,21 +108,21 @@
             </li>
             <li>
               <NuxtLink to="/about" class="hover:text-gold-400 transition-colors">
-                Complimentary Sizing Guide
+                Westlands & Karen Atelier Studios
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/about" class="hover:text-gold-400 transition-colors">
-                Ethical Sourcing Protocol
-              </NuxtLink>
+              <span class="text-emerald-400">
+                Lipa na M-PESA Till: 892014
+              </span>
             </li>
             <li>
-              <NuxtLink to="/about" class="hover:text-gold-400 transition-colors">
-                Lifetime Care & Cleaning
-              </NuxtLink>
+              <a href="tel:+254712345678" class="hover:text-gold-400 transition-colors">
+                Nairobi Hotline: +254 712 345 678
+              </a>
             </li>
             <li>
-              <a href="mailto:concierge@aureliajewelry.com" class="hover:text-gold-400 transition-colors">
+              <a href="mailto:concierge@aureliafinejewelry.com" class="hover:text-gold-400 transition-colors">
                 Private Concierge Inquiries
               </a>
             </li>
@@ -159,7 +159,7 @@
 
       <!-- Bottom Bar -->
       <div class="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
-        <p>© 2026 AURELIA Fine Jewelry Inc. All rights reserved.</p>
+        <p>© 2026 AURELIA Fine Jewelry Kenya Ltd. Handcrafted in Nairobi, Kenya.</p>
         <div class="flex items-center gap-6">
           <NuxtLink to="/about" class="hover:text-zinc-400 transition-colors">Privacy Policy</NuxtLink>
           <NuxtLink to="/about" class="hover:text-zinc-400 transition-colors">Terms of Atelier</NuxtLink>

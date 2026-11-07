@@ -34,7 +34,7 @@
               Aurelia
             </span>
             <span class="text-[9px] tracking-[0.35em] text-zinc-400 uppercase font-medium -mt-0.5">
-              Fine Jewelry
+              Nairobi · Fine Jewelry
             </span>
           </NuxtLink>
         </div>

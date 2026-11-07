@@ -37,19 +37,23 @@ useHead({
           {
             '@type': 'Organization',
             '@id': `${siteUrl}/#organization`,
-            name: 'AURELIA Fine Jewelry',
+            name: 'AURELIA Fine Jewelry Kenya',
             url: siteUrl,
             logo: `${siteUrl}/favicon.svg`,
-            sameAs: [
-              'https://instagram.com/aureliafinejewelry',
-              'https://pinterest.com/aureliafinejewelry',
-            ],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Westlands Commercial Centre, Ring Road',
+              addressLocality: 'Nairobi',
+              addressRegion: 'Nairobi County',
+              postalCode: '00100',
+              addressCountry: 'KE',
+            },
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+1-800-555-0199',
+              telephone: '+254-712-345-678',
               contactType: 'customer service',
-              areaServed: 'Worldwide',
-              availableLanguage: ['English', 'French'],
+              areaServed: ['Kenya', 'Worldwide'],
+              availableLanguage: ['English', 'Swahili'],
             },
           },
           {
