@@ -2,7 +2,7 @@
 > **Section 4: Take-Home Project Submission**  
 > **Brand:** AURELIA Fine Jewelry (Original artisan atelier concept)  
 > **Framework:** Nuxt 3 (Universal SSR), Tailwind CSS, Pinia, Nitro Node.js Engine  
-> **Live Demo:** [Deployable on Vercel / Netlify with 1-click]  
+> **Live Demo:** [https://online-store-peach-three.vercel.app](https://online-store-peach-three.vercel.app)  
 > **Repository:** [https://github.com/wmmandela/Online_Store](https://github.com/wmmandela/Online_Store)
 
 ---
@@ -73,10 +73,10 @@ The brand was crafted entirely from scratch—no existing store's branding, phot
 ### D. Shopping Bag & Cart Drawer (`/cart` & Slide-Out)
 - **Slide-Out Cart Drawer**: Accessible from any page via the header bag icon.
 - **Dedicated Full Bag Page (`/cart`)**: Detailed overview with image thumbnails, selected ring sizes, custom engraving text notes, and quantity steppers.
-- **Free Shipping Progress Meter**: Dynamic calculation towards the $200 free express shipping threshold.
+- **Free Shipping Progress Meter**: Dynamic calculation towards the KSh 30,000 free express shipping threshold.
 - **Promotional Voucher Engine**:
   - `AURELIA10`: 10% discount on order subtotal.
-  - `VIP50`: $50 off orders of $500 or more.
+  - `VIP50`: KSh 5,000 off orders of KSh 60,000 or more.
   - `FREESHIP`: Waives all express courier fees.
 - **Financial Breakdown**: Subtotal, discount savings, insured shipping, 8% estimated sales tax, and total.
 

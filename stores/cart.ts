@@ -28,7 +28,7 @@ export const useCartStore = defineStore('cart', {
       return Math.min(sub, state.fixedDiscount)
     },
 
-    freeShippingThreshold: (): number => 200,
+    freeShippingThreshold: (): number => 30000, // KSh 30,000
 
     amountUntilFreeShipping(): number {
       return Math.max(0, this.freeShippingThreshold - this.subtotal)
@@ -45,7 +45,7 @@ export const useCartStore = defineStore('cart', {
 
     estimatedShipping(): number {
       if (this.subtotal === 0) return 0
-      return this.hasFreeShipping ? 0 : 15
+      return this.hasFreeShipping ? 0 : 1500 // KSh 1,500 standard courier
     },
 
     estimatedTax(): number {
@@ -99,7 +99,6 @@ export const useCartStore = defineStore('cart', {
     addToCart(product: Product, quantity = 1, selectedSize?: string, engravingText?: string) {
       this.init()
 
-      // Generate composite id for items with different sizes or engravings
       const cleanSize = selectedSize ? selectedSize.trim() : ''
       const cleanEngraving = engravingText ? engravingText.trim() : ''
       const compositeId = `${product.id}__${cleanSize}__${cleanEngraving}`
@@ -176,18 +175,18 @@ export const useCartStore = defineStore('cart', {
         this.discountRate = 0
         this.fixedDiscount = 0
         this.persist()
-        return { success: true, message: 'Free shipping voucher applied!' }
+        return { success: true, message: 'Free express courier delivery applied!' }
       }
 
-      if (normalized === 'VIP50') {
-        if (this.subtotal < 500) {
-          return { success: false, message: 'VIP50 requires a minimum order of $500.' }
+      if (normalized === 'VIP50' || normalized === 'VIP5000') {
+        if (this.subtotal < 60000) {
+          return { success: false, message: 'VIP voucher requires a minimum order of KSh 60,000.' }
         }
         this.promoCode = normalized
         this.discountRate = 0
-        this.fixedDiscount = 50
+        this.fixedDiscount = 5000
         this.persist()
-        return { success: true, message: '$50 VIP voucher applied!' }
+        return { success: true, message: 'KSh 5,000 VIP voucher applied!' }
       }
 
       return { success: false, message: 'Invalid or expired promotional code.' }

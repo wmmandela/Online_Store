@@ -2,7 +2,7 @@ import { products } from '../data/products'
 
 export default defineEventHandler((event) => {
   const config = useRuntimeConfig()
-  const siteUrl = config.public.siteUrl || 'https://aurelia-jewelry.vercel.app'
+  const siteUrl = config.public.siteUrl || 'https://online-store-peach-three.vercel.app'
   const currentDate = new Date().toISOString().split('T')[0]
 
   const staticRoutes = [

@@ -3,7 +3,7 @@
     <!-- Announcement Top Strip -->
     <div class="bg-zinc-900 text-zinc-100 py-2 px-4 text-center text-[11px] tracking-widest uppercase font-medium">
       <div class="max-w-7xl mx-auto flex items-center justify-center gap-4">
-        <span>Complimentary Worldwide Insured Express Delivery Over $200</span>
+        <span>Complimentary Insured Courier Delivery Across Kenya & Worldwide Over KSh 30,000</span>
         <span class="hidden md:inline text-zinc-500">|</span>
         <span class="hidden md:inline">Use code <strong class="text-gold-300">AURELIA10</strong> for 10% off</span>
       </div>

@@ -30,7 +30,7 @@
             </svg>
           </div>
           <h4 class="font-serif text-sm font-medium text-white mb-1">Insured Express Shipping</h4>
-          <p class="text-[11px] text-zinc-400">Complimentary on all orders over $200</p>
+          <p class="text-[11px] text-zinc-400">Complimentary on all orders over KSh 30,000</p>
         </div>
 
         <div class="flex flex-col items-center">
@@ -135,7 +135,7 @@
             Private Salon
           </h4>
           <p class="text-xs text-zinc-400 mb-3">
-            Receive private exhibition invitations, secret vault drops, and a $100 welcome credit.
+            Receive private exhibition invitations, secret vault drops, and a KSh 10,000 welcome credit.
           </p>
           <form @submit.prevent="subscribeNewsletter" class="space-y-2">
             <div class="relative">
@@ -180,7 +180,7 @@ const subscribeNewsletter = () => {
     subscribed.value = true
     showToast({
       title: 'Salon Access Granted',
-      message: 'Your $100 voucher code AURELIA10 is ready to use.',
+      message: 'Your 10% voucher code AURELIA10 is ready to use.',
       type: 'success',
     })
     emailInput.value = ''

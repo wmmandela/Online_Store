@@ -64,7 +64,7 @@
               />
             </div>
             <div class="sm:col-span-2">
-              <label class="block font-medium text-zinc-700 mb-1">Email Address (for order confirmation & tracking) *</label>
+              <label class="block font-medium text-zinc-700 mb-1">Email Address (for order tracking) *</label>
               <input
                 v-model="form.email"
                 required
@@ -78,7 +78,7 @@
                 v-model="form.phone"
                 required
                 type="tel"
-                placeholder="+1 (555) 019-2834"
+                placeholder="+254 712 345 678"
                 class="w-full border border-zinc-300 rounded-sm px-3 py-2 text-zinc-900 focus:outline-none focus:border-zinc-900"
               />
             </div>
@@ -100,7 +100,7 @@
               />
             </div>
             <div>
-              <label class="block font-medium text-zinc-700 mb-1">City *</label>
+              <label class="block font-medium text-zinc-700 mb-1">City / Town *</label>
               <input
                 v-model="form.city"
                 required
@@ -109,7 +109,7 @@
               />
             </div>
             <div>
-              <label class="block font-medium text-zinc-700 mb-1">State / Region *</label>
+              <label class="block font-medium text-zinc-700 mb-1">County / Region *</label>
               <input
                 v-model="form.state"
                 required
@@ -118,7 +118,7 @@
               />
             </div>
             <div>
-              <label class="block font-medium text-zinc-700 mb-1">Postal / ZIP Code *</label>
+              <label class="block font-medium text-zinc-700 mb-1">Postal Code *</label>
               <input
                 v-model="form.postalCode"
                 required
@@ -152,12 +152,12 @@
                   class="w-4 h-4 text-zinc-900 border-zinc-300"
                 />
                 <div>
-                  <strong class="text-zinc-900 block font-semibold">Insured Standard Courier (3-5 business days)</strong>
-                  <span class="text-zinc-500 text-[11px]">Discreet packaging with direct signature required upon handover.</span>
+                  <strong class="text-zinc-900 block font-semibold">Insured Standard Courier (2-4 business days)</strong>
+                  <span class="text-zinc-500 text-[11px]">Discreet luxury packaging with direct signature required upon handover.</span>
                 </div>
               </div>
               <span class="font-semibold text-zinc-900">
-                {{ cartStore.subtotal >= 200 || cartStore.promoCode === 'FREESHIP' ? 'Free' : '$15' }}
+                {{ cartStore.subtotal >= 30000 || cartStore.promoCode === 'FREESHIP' ? 'Free' : formatPrice(1500) }}
               </span>
             </label>
 
@@ -174,12 +174,12 @@
                   class="w-4 h-4 text-zinc-900 border-zinc-300"
                 />
                 <div>
-                  <strong class="text-zinc-900 block font-semibold">Priority Concierge Express (1-2 business days)</strong>
-                  <span class="text-zinc-500 text-[11px]">Armored courier expedited service with GPS telemetry.</span>
+                  <strong class="text-zinc-900 block font-semibold">Priority Concierge Express (Same/Next Day)</strong>
+                  <span class="text-zinc-500 text-[11px]">Expedited armored courier service with GPS telemetry.</span>
                 </div>
               </div>
               <span class="font-semibold text-zinc-900">
-                {{ cartStore.promoCode === 'FREESHIP' ? 'Free' : '$35' }}
+                {{ cartStore.promoCode === 'FREESHIP' ? 'Free' : formatPrice(3500) }}
               </span>
             </label>
           </div>
@@ -192,7 +192,7 @@
               <span class="w-6 h-6 rounded-full bg-zinc-900 text-white text-xs flex items-center justify-center font-mono font-medium">3</span>
               Payment Method (Mocked)
             </h2>
-            <span class="text-[11px] text-emerald-700 font-medium">Test Mode Enabled</span>
+            <span class="text-[11px] text-emerald-700 font-medium">Test Sandbox Mode</span>
           </div>
 
           <div class="flex gap-2">
@@ -206,19 +206,19 @@
             </button>
             <button
               type="button"
+              @click="paymentMethod = 'mpesa'"
+              class="flex-1 py-2 px-3 text-xs font-medium border text-center transition-colors"
+              :class="paymentMethod === 'mpesa' ? 'border-emerald-700 bg-emerald-700 text-white' : 'border-zinc-200 text-zinc-700 hover:bg-zinc-50'"
+            >
+              M-PESA (Mock)
+            </button>
+            <button
+              type="button"
               @click="paymentMethod = 'apple'"
               class="flex-1 py-2 px-3 text-xs font-medium border text-center transition-colors"
               :class="paymentMethod === 'apple' ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-700 hover:bg-zinc-50'"
             >
                Apple Pay (Mock)
-            </button>
-            <button
-              type="button"
-              @click="paymentMethod = 'paypal'"
-              class="flex-1 py-2 px-3 text-xs font-medium border text-center transition-colors"
-              :class="paymentMethod === 'paypal' ? 'border-zinc-900 bg-zinc-900 text-white' : 'border-zinc-200 text-zinc-700 hover:bg-zinc-50'"
-            >
-              PayPal (Mock)
             </button>
           </div>
 
@@ -267,8 +267,18 @@
             </div>
           </div>
 
+          <!-- Mock M-PESA Box -->
+          <div v-else-if="paymentMethod === 'mpesa'" class="p-4 bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 rounded-sm space-y-2">
+            <div class="font-semibold flex items-center gap-1.5">
+              <span>M-PESA Express STK Push Simulation</span>
+            </div>
+            <p class="text-[11px] text-emerald-700 leading-relaxed">
+              Upon placing the order, a simulated M-PESA STK prompt will be triggered for phone number <strong class="font-mono">{{ form.phone }}</strong> for total amount of <strong class="font-mono">{{ formatPrice(computedTotal) }}</strong>.
+            </p>
+          </div>
+
           <div v-else class="p-4 bg-zinc-50 text-xs text-zinc-600 rounded-sm text-center">
-            You will be seamlessly authenticated with mocked {{ paymentMethod === 'apple' ? 'Apple Pay' : 'PayPal' }} upon clicking Place Order.
+            You will be seamlessly authenticated with mocked Apple Pay upon clicking Place Order.
           </div>
         </div>
 
@@ -361,25 +371,23 @@ const { formatPrice } = useCurrency()
 const { showToast } = useToast()
 
 const shippingTier = ref<'standard' | 'express'>('standard')
-const paymentMethod = ref<'card' | 'apple' | 'paypal'>('card')
+const paymentMethod = ref<'card' | 'mpesa' | 'apple'>('card')
 const submitting = ref(false)
 const submitted = ref(false)
 
-// Sample prefilled mock addresses for convenience
 const form = reactive<ShippingAddress>({
   firstName: 'Machera',
   lastName: 'Mandela',
   email: 'client@aureliafinejewelry.com',
-  phone: '+1 (555) 234-5678',
-  address: '742 Evergreen Terrace',
+  phone: '+254 712 345 678',
+  address: 'Westlands Commercial Centre, Ring Road',
   apartment: 'Suite 4B',
-  city: 'New York',
-  state: 'NY',
-  postalCode: '10021',
-  country: 'United States',
+  city: 'Nairobi',
+  state: 'Nairobi County',
+  postalCode: '00100',
+  country: 'Kenya',
 })
 
-// Card fields
 const cardName = ref('Machera Mandela')
 const cardNumber = ref('4242 •••• •••• 4242')
 const cardExp = ref('12/28')
@@ -387,9 +395,9 @@ const cardCvc = ref('888')
 
 const computedShippingCost = computed(() => {
   if (shippingTier.value === 'express') {
-    return cartStore.promoCode === 'FREESHIP' ? 0 : 35
+    return cartStore.promoCode === 'FREESHIP' ? 0 : 3500
   }
-  return cartStore.subtotal >= 200 || cartStore.promoCode === 'FREESHIP' ? 0 : 15
+  return cartStore.subtotal >= 30000 || cartStore.promoCode === 'FREESHIP' ? 0 : 1500
 })
 
 const computedTax = computed(() => {
@@ -405,6 +413,12 @@ const handleSubmitOrder = async () => {
   if (cartStore.items.length === 0 || submitting.value) return
   submitting.value = true
 
+  const methodLabel = paymentMethod.value === 'card'
+    ? 'Credit Card (•••• 4242)'
+    : paymentMethod.value === 'mpesa'
+    ? 'M-PESA Express (Simulated)'
+    : 'Apple Pay'
+
   try {
     const response = await $fetch<{ success: boolean; order: Order }>('/api/checkout', {
       method: 'POST',
@@ -413,13 +427,12 @@ const handleSubmitOrder = async () => {
         shippingAddress: { ...form },
         shippingTier: shippingTier.value,
         discountCode: cartStore.promoCode || undefined,
-        paymentMethod: paymentMethod.value === 'card' ? 'Credit Card (•••• 4242)' : paymentMethod.value === 'apple' ? 'Apple Pay' : 'PayPal',
+        paymentMethod: methodLabel,
       },
     })
 
     if (response.success && response.order) {
       submitted.value = true
-      // Store completed order in sessionStorage for receipt presentation
       if (import.meta.client) {
         sessionStorage.setItem(`order_${response.order.orderId}`, JSON.stringify(response.order))
       }

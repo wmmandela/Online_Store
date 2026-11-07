@@ -42,7 +42,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://aurelia-jewelry.vercel.app',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://online-store-peach-three.vercel.app',
       siteName: 'AURELIA Fine Jewelry',
       siteDescription: 'Modern luxury fine jewelry handcrafted with ethical diamonds and recycled 18k solid gold.',
     },

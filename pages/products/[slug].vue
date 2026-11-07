@@ -97,7 +97,7 @@
             </span>
           </div>
           <p class="text-[11px] text-zinc-500 mt-1">
-            Or 4 interest-free payments of {{ formatPrice(Math.round(product.price / 4)) }} with <strong class="text-zinc-700">Klarna</strong>
+            Or 3 interest-free monthly installments of {{ formatPrice(Math.round(product.price / 3)) }}
           </p>
         </div>
 
@@ -505,7 +505,7 @@ useHead({
         offers: {
           '@type': 'Offer',
           url: productCanonicalUrl.value,
-          priceCurrency: 'USD',
+          priceCurrency: 'KES',
           price: product.value.price,
           priceValidUntil: '2027-12-31',
           itemCondition: 'https://schema.org/NewCondition',
@@ -518,7 +518,7 @@ useHead({
           },
           hasMerchantReturnPolicy: {
             '@type': 'MerchantReturnPolicy',
-            applicableCountry: 'US',
+            applicableCountry: 'KE',
             returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
             merchantReturnDays: 30,
             returnMethod: 'https://schema.org/ReturnByMail',
@@ -529,11 +529,11 @@ useHead({
             shippingRate: {
               '@type': 'MonetaryAmount',
               value: 0,
-              currency: 'USD',
+              currency: 'KES',
             },
             shippingDestination: {
               '@type': 'DefinedRegion',
-              addressCountry: 'US',
+              addressCountry: 'KE',
             },
             deliveryTime: {
               '@type': 'ShippingDeliveryTime',

@@ -60,17 +60,17 @@ export default defineEventHandler(async (event): Promise<{ success: boolean; ord
   const code = (body.discountCode || '').trim().toUpperCase()
   if (code === 'AURELIA10' || code === 'WELCOME10') {
     discount = Math.round(subtotal * 0.10)
-  } else if (code === 'VIP50' && subtotal >= 500) {
-    discount = 50
+  } else if ((code === 'VIP50' || code === 'VIP5000') && subtotal >= 60000) {
+    discount = 5000
   }
 
-  // Shipping calculation
+  // Shipping calculation (KES)
   let shippingCost = 0
   if (body.shippingTier === 'express') {
-    shippingCost = code === 'FREESHIP' ? 0 : 35
+    shippingCost = code === 'FREESHIP' ? 0 : 3500 // KSh 3,500
   } else {
-    // Standard insured: free above $200
-    shippingCost = subtotal >= 200 || code === 'FREESHIP' ? 0 : 15
+    // Standard insured: free above KSh 30,000
+    shippingCost = subtotal >= 30000 || code === 'FREESHIP' ? 0 : 1500 // KSh 1,500
   }
 
   // Estimated tax (8% on taxable subtotal minus discount)
